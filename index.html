@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Test Suite</title>
+<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.19.1.css">
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="https://code.jquery.com/qunit/qunit-2.19.1.js"></script>
+  <script>
+        class Calculadora{
+            constructor(numA, numB){
+                this.numA = numA
+                this.numB = numB
+            }
+            somar(){
+                return this.numA+this.numB
+            }
+            subtrair(){
+                return this.numA-this.numB
+            }
+            multiplicar(){
+                return this.numA*this.numB
+            }
+            dividir(){
+                return this.numA/this.numB
+            }
+        }
+
+        QUnit.test("Teste Calculadora", function(assert){
+            calcul = new Calculadora(5, 2)
+            assert.equal(calcul.somar(), 7, "Método Somar")
+            assert.equal(calcul.subtrair(), 3, "Método Subtrair")
+            assert.equal(calcul.multiplicar(), 10, "Método Multiplicar")
+            assert.equal(calcul.dividir(), 2.5, "Método Dividir")
+        })
+  </script>
+</body>
